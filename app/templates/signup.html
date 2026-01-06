@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - bluehex2{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <h2 class="text-center text-3xl font-hand font-bold text-black">Create Account</h2>
+            <p class="mt-2 text-center text-sm text-secondary font-sans">
+                Already have an account? <a href="/login" class="font-medium text-black hover:underline">Sign in</a>
+            </p>
+        </div>
+        <form class="mt-8 space-y-6" method="POST" action="/signup">
+            <div class="bg-white border-2 border-black rounded-lg p-4 sm:p-6 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="first_name" class="block text-sm font-medium text-black mb-2 font-hand">
+                            First Name
+                        </label>
+                        <input 
+                            id="first_name" 
+                            name="first_name" 
+                            type="text" 
+                            required 
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                            placeholder="John"
+                        >
+                    </div>
+                    <div>
+                        <label for="last_name" class="block text-sm font-medium text-black mb-2 font-hand">
+                            Last Name
+                        </label>
+                        <input 
+                            id="last_name" 
+                            name="last_name" 
+                            type="text" 
+                            required 
+                            class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                            placeholder="Doe"
+                        >
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-black mb-2 font-hand">
+                        Email Address
+                    </label>
+                    <input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        required 
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                        placeholder="you@example.com"
+                    >
+                </div>
+                <div>
+                    <label for="phone_country" class="block text-sm font-medium text-black mb-2 font-hand">
+                        Country
+                    </label>
+                    <select 
+                        id="phone_country" 
+                        name="phone_country" 
+                        required 
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                    >
+                        <option value="au">Australia</option>
+                        <option value="ph">Philippines</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="phone_number" class="block text-sm font-medium text-black mb-2 font-hand">
+                        Phone Number
+                    </label>
+                    <input 
+                        id="phone_number" 
+                        name="phone_number" 
+                        type="tel" 
+                        required 
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                        placeholder="0412345678"
+                    >
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-black mb-2 font-hand">
+                        Password
+                    </label>
+                    <input 
+                        id="password" 
+                        name="password" 
+                        type="password" 
+                        required 
+                        minlength="8"
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                        placeholder="••••••••"
+                    >
+                    <p class="mt-1 text-xs text-secondary font-sans">Must be at least 8 characters</p>
+                </div>
+                <div>
+                    <label for="confirm_password" class="block text-sm font-medium text-black mb-2 font-hand">
+                        Confirm Password
+                    </label>
+                    <input 
+                        id="confirm_password" 
+                        name="confirm_password" 
+                        type="password" 
+                        required 
+                        minlength="8"
+                        class="w-full px-4 py-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-black focus:border-black font-sans"
+                        placeholder="••••••••"
+                    >
+                </div>
+                <div>
+                    <button 
+                        type="submit" 
+                        class="w-full bg-black text-white px-6 py-3 rounded-lg font-hand font-bold hover:bg-gray-800 transition-colors"
+                    >
+                        Create Account
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
