@@ -257,7 +257,7 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading__fade">
-        <a href="/" class="mxd-logo">
+        <a href="/index-main" class="mxd-logo">
           <!-- logo icon -->
           <svg class="mxd-logo__image" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
             <style type="text/css">
@@ -304,21 +304,6 @@
           <span class="btn-caption">Say Hello</span>
           <i class="ph-bold ph-arrow-up-right"></i>
         </a>
-        {% if user %}
-        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/logout">
-          <span class="btn-caption">Sign out</span>
-          <i class="ph-bold ph-arrow-up-right"></i>
-        </a>
-        {% else %}
-        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/login">
-          <span class="btn-caption">Sign in</span>
-          <i class="ph-bold ph-arrow-up-right"></i>
-        </a>
-        <a class="btn btn-anim btn-default btn-mobile-icon slide-right-up" href="/signup">
-          <span class="btn-caption">Sign up</span>
-          <i class="ph-bold ph-arrow-up-right"></i>
-        </a>
-        {% endif %}
       </div>
     </header>
     <!-- Header End -->

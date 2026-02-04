@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI, Request, Depends, Path
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
@@ -49,6 +49,34 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 # Include auth routes
 app.include_router(auth_router)
 
+# Rayo template routes (excluding auth/contact which are handled elsewhere)
+RAYO_PAGES = [
+    "404",
+    "about-me",
+    "about-us",
+    "blog-article",
+    "blog-creative",
+    "blog-standard",
+    "faq",
+    "index",
+    "index-creative-design-studio",
+    "index-creative-developer",
+    "index-designer",
+    "index-digital-agency",
+    "index-freelancer-portfolio",
+    "index-main",
+    "index-personal-portfolio",
+    "index-software-development-company",
+    "index-web-agency",
+    "pricing",
+    "project-details",
+    "services",
+    "team",
+    "works-masonry",
+    "works-simple",
+]
+RAYO_PAGE_REGEX = "^(?:" + "|".join(RAYO_PAGES) + ")$"
+
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request, db: AsyncSession = Depends(get_db)):
     """Root endpoint."""
@@ -98,6 +126,21 @@ async def contact_page(request: Request, db: AsyncSession = Depends(get_db)):
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy"}
+
+@app.get("/{page}", response_class=HTMLResponse)
+async def rayo_page(
+    request: Request,
+    page: str = Path(..., regex=RAYO_PAGE_REGEX),
+    db: AsyncSession = Depends(get_db),
+):
+    """Serve other Rayo pages."""
+    user = await get_current_user_from_request(request, db)
+    return templates.TemplateResponse(f"{page}.html", {
+        "request": request,
+        "user": user,
+        "is_logged_in": user is not None,
+        "current_path": f"/{page}"
+    })
 
 if __name__ == "__main__":
     import uvicorn
