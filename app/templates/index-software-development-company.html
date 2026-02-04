@@ -14,7 +14,7 @@
 
     <!-- Viewport Meta-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Template Favicon & Icons Start -->
     <link rel="icon" href="/static/img/favicon/favicon.ico" sizes="any">
@@ -33,9 +33,9 @@
     <!-- Facebook Metadata End -->
 
     <!-- Template Styles Start -->
-    <link rel="stylesheet" type="text/css" href="/static/css/loaders/loader.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/loaders/loader.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.min.css">
     <!-- Template Styles End -->
 
     <!-- Custom Browser Color Start -->
@@ -68,7 +68,7 @@
 
       <!-- Hamburger Start -->
       <div class="mxd-nav__contain loading__fade">
-        <a href="#0" class="mxd-nav__hamburger">
+        <a href="#0" class="mxd-nav__hamburger" aria-label="Menu">
           <!-- flip element -->
           <div class="hamburger__base"></div>
           <div class="hamburger__line"></div>
@@ -223,10 +223,10 @@
                   <p class="menu-promo__caption menu-fade-in">👋 Nice to see you!<br>I'm Alex Walker, digital 
                     designer and illustrator based in Odesa, Ukraine</p>
                   <div class="menu-promo__video">
-                    <video class="menu-video" id="inner-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/img/demo/01_card-img.webp">
-                      <source type="video/mp4" src="/static/video/540x310_video.mp4">
-                      <source type="video/webm" src="/static/video/540x310_video.webm">
-                      <source type="video/ogv" src="/static/video/540x310_video.ogv">
+                    <video class="menu-video" id="inner-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/540x310_video-01.webp">
+                      <source type="video/mp4" src="/static/video/540x310_video-01.mp4">
+                      <source type="video/webm" src="/static/video/540x310_video-01.webm">
+                      <source type="video/ogv" src="/static/video/540x310_video-01.ogv">
                     </video>
                   </div>
                 </div>
@@ -257,7 +257,7 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading__fade">
-        <a href="/index-main" class="mxd-logo">
+        <a href="/" class="mxd-logo">
           <!-- logo icon -->
           <svg class="mxd-logo__image" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
             <style type="text/css">
@@ -300,10 +300,25 @@
       <!-- header controls -->
       <div class="mxd-header__controls loading__fade">
         <button id="color-switcher" class="mxd-color-switcher" type="button" role="switch" aria-label="light/dark mode" aria-checked="true"></button>
-        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/contact">
+        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/contact" aria-label="Say Hello">
           <span class="btn-caption">Say Hello</span>
           <i class="ph-bold ph-arrow-up-right"></i>
         </a>
+        {% if user %}
+        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/logout" aria-label="Sign out">
+          <span class="btn-caption">Sign out</span>
+          <i class="ph-bold ph-arrow-up-right"></i>
+        </a>
+        {% else %}
+        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="/login" aria-label="Sign in">
+          <span class="btn-caption">Sign in</span>
+          <i class="ph-bold ph-arrow-up-right"></i>
+        </a>
+        <a class="btn btn-anim btn-default btn-mobile-icon slide-right-up" href="/signup" aria-label="Sign up">
+          <span class="btn-caption">Sign up</span>
+          <i class="ph-bold ph-arrow-up-right"></i>
+        </a>
+        {% endif %}
       </div>
     </header>
     <!-- Header End -->
@@ -325,45 +340,45 @@
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__video">
-                        <video preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/img/demo/01_hero-img.webp">
-                          <source type="video/mp4" src="/static/video/hero/450x450_video.mp4">
-                          <source type="video/webm" src="/static/video/hero/450x450_video.webm">
-                          <source type="video/ogv" src="/static/video/hero/450x450_video.ogv">
+                        <video preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/hero/hero-video-02.webp">
+                          <source type="video/mp4" src="/static/video/hero/hero-video-02.mp4">
+                          <source type="video/webm" src="/static/video/hero/hero-video-02.webm">
+                          <source type="video/ogv" src="/static/video/hero/hero-video-02.ogv">
                         </video>
                       </div>
                     </div>
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__image">
-                        <img class="mxd-move" src="/static/img/demo/01_comp-img.webp" alt="Image">
+                        <img class="mxd-move" src="/static/img/hero/29_hero-img.webp" alt="Image">
                       </div>
                     </div>
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__video">
-                        <video preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/img/demo/01_hero-img.webp">
-                          <source type="video/mp4" src="/static/video/hero/450x450_video.mp4">
-                          <source type="video/webm" src="/static/video/hero/450x450_video.webm">
-                          <source type="video/ogv" src="/static/video/hero/450x450_video.ogv">
+                        <video preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/hero/hero-video-01.webp">
+                          <source type="video/mp4" src="/static/video/hero/hero-video-01.mp4">
+                          <source type="video/webm" src="/static/video/hero/hero-video-01.webm">
+                          <source type="video/ogv" src="/static/video/hero/hero-video-01.ogv">
                         </video>
                       </div>
                     </div>
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__image">
-                        <img class="mxd-rotate-slow" src="/static/img/demo/02_hero-img.webp" alt="Image">
+                        <img class="mxd-rotate-slow" src="/static/img/hero/28_hero-img.webp" alt="Image">
                       </div>
                     </div>
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__image">
-                        <img class="mxd-move" src="/static/img/demo/02_hero-img.webp" alt="Image">
+                        <img class="mxd-move" src="/static/img/hero/30_hero-img.webp" alt="Image">
                       </div>
                     </div>
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__image">
-                        <img class="mxd-pulse-small" src="/static/img/demo/02_hero-img.webp" alt="Image">
+                        <img class="mxd-pulse-small" src="/static/img/hero/24_hero-img.webp" alt="Image">
                       </div>
                     </div>
                   </div>
@@ -454,10 +469,10 @@
                 <!-- video divider -->
                 <div class="mxd-divider">
                   <div class="mxd-divider__video">
-                    <video class="video parallax-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/img/demo/screens/01-d.webp">
-                      <source type="video/mp4" src="/static/video/1920x1080_video.mp4">
-                      <source type="video/webm" src="/static/video/1920x1080_video.webm">
-                      <source type="video/ogv" src="/static/video/1920x1080_video.ogv">
+                    <video class="video parallax-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/1920x1080_video-04.webp">
+                      <source type="video/mp4" src="/static/video/1920x1080_video-04.mp4">
+                      <source type="video/webm" src="/static/video/1920x1080_video-04.webm">
+                      <source type="video/ogv" src="/static/video/1920x1080_video-04.ogv">
                     </video>
                   </div>
                 </div>
@@ -578,7 +593,7 @@
                   <div class="col-12 col-xl-8 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-right">
                     <div class="mxd-services-cards-s__inner justify-between bg-base-tint radius-l padding-4">
                       <div class="mxd-services-cards-s__title">
-                        <h3 class="anim-uni-in-up">AI-powered<br>solutions</h3>
+                        <p class="anim-uni-in-up">AI-powered<br>solutions</p>
                       </div>
                       <div class="mxd-services-cards-s__info width-50">
                         <div class="mxd-services-cards-s__tags">
@@ -591,7 +606,7 @@
                         <p class="anim-uni-in-up">Intelligent automation, predictive analytics, and machine learning-driven applications.</p>
                       </div>
                       <div class="mxd-services-cards-s__image image-right">
-                        <img src="/static/img/demo/01_fea-img.webp" alt="Illustration">
+                        <img src="/static/img/illustrations/1200x1200_service-image-01.webp" alt="Illustration">
                       </div>
                     </div>
                   </div>
@@ -599,7 +614,7 @@
                   <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-left">
                     <div class="mxd-services-cards-s__inner justify-end bg-accent radius-l padding-4">
                       <div class="mxd-services-cards-s__title">
-                        <h3 class="opposite anim-uni-in-up">Fintech</h3>
+                        <p class="opposite anim-uni-in-up">Fintech</p>
                       </div>
                       <div class="mxd-services-cards-s__info">
                         <div class="mxd-services-cards-s__tags">
@@ -611,7 +626,7 @@
                           processing and investment platforms.</p>
                       </div>
                       <div class="mxd-services-cards-s__image image-top-right">
-                        <img class="mxd-move" src="/static/img/demo/02_hero-img.webp" alt="Illustration">
+                        <img class="mxd-move" src="/static/img/illustrations/1200x1200_service-image-02.webp" alt="Illustration">
                       </div>
                     </div>
                   </div>
@@ -619,7 +634,7 @@
                   <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-right">
                     <div class="mxd-services-cards-s__inner bg-additional radius-l padding-4">
                       <div class="mxd-services-cards-s__title">
-                        <h3 class="anim-uni-in-up">Blockchain</h3>
+                        <p class="anim-uni-in-up">Blockchain</p>
                       </div>
                       <div class="mxd-services-cards-s__info">
                         <div class="mxd-services-cards-s__tags">
@@ -631,7 +646,7 @@
                           and cryptocurrencies.</p>
                       </div>
                       <div class="mxd-services-cards-s__image image-bottom">
-                        <img class="mxd-rotate-slow" src="/static/img/demo/02_hero-img.webp" alt="Illustration">
+                        <img class="mxd-rotate-slow" src="/static/img/illustrations/1200x1200_service-image-03.webp" alt="Illustration">
                       </div>
                     </div>
                   </div>
@@ -639,7 +654,7 @@
                   <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in">
                     <div class="mxd-services-cards-s__inner bg-base-opp radius-l padding-4">
                       <div class="mxd-services-cards-s__title">
-                        <h3 class="opposite anim-uni-in-up">Cybersecurity</h3>
+                        <p class="opposite anim-uni-in-up">Cybersecurity</p>
                       </div>
                       <div class="mxd-services-cards-s__info">
                         <div class="mxd-services-cards-s__tags">
@@ -651,7 +666,7 @@
                           and secure data protection.</p>
                       </div>
                       <div class="mxd-services-cards-s__image image-bottom image-bottom-2">
-                        <img src="/static/img/demo/02_fea-img.webp" alt="Illustration">
+                        <img src="/static/img/illustrations/1200x1200_service-image-04.webp" alt="Illustration">
                       </div>
                     </div>
                   </div>
@@ -659,7 +674,7 @@
                   <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-left">
                     <div class="mxd-services-cards-s__inner justify-end bg-base-tint radius-l padding-4">
                       <div class="mxd-services-cards-s__title">
-                        <h3 class="anim-uni-in-up">Gaming</h3>
+                        <p class="anim-uni-in-up">Gaming</p>
                       </div>
                       <div class="mxd-services-cards-s__info">
                         <div class="mxd-services-cards-s__tags">
@@ -670,7 +685,7 @@
                         <p class="anim-uni-in-up">Immersive experiences, multiplayer platforms, and game engine development.</p>
                       </div>
                       <div class="mxd-services-cards-s__image image-top">
-                        <img src="/static/img/demo/02_hero-img.webp" alt="Illustration">
+                        <img src="/static/img/illustrations/1200x1200_service-image-05.webp" alt="Illustration">
                       </div>
                     </div>
                   </div>
@@ -777,7 +792,13 @@
                       <h2 class="reveal-type">Our capabilities</h2>
                     </div>
                   </div>
-                  <div class="col-12 col-xl-3 mxd-grid-item no-margin"></div>
+                  <div class="col-12 col-xl-3 mxd-grid-item no-margin">
+                    <!-- <div class="mxd-section-title__hrdescr">
+                      <p class="anim-uni-in-up">Design</p>
+                      <p class="anim-uni-in-up">Development</p>
+                      <p class="anim-uni-in-up">Mastership</p>
+                    </div> -->
+                  </div>
                   <div class="col-12 col-xl-3 mxd-grid-item no-margin">
                     <div class="mxd-section-title__hrcontrols anim-uni-in-up">
                       <a class="btn btn-anim btn-default btn-outline slide-right-up" href="/services">
@@ -802,16 +823,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-01.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Software development</h6>
+                        <p class="mxd-cpb-list__title">Software development</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 01</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-01.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -819,16 +840,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-03.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Web app development</h6>
+                        <p class="mxd-cpb-list__title">Web app development</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 02</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-03.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -836,16 +857,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-02.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Mobile app development</h6>
+                        <p class="mxd-cpb-list__title">Mobile app development</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 03</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-02.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -853,16 +874,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-04.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">UI/UX design</h6>
+                        <p class="mxd-cpb-list__title">UI/UX design</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 04</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-04.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -870,16 +891,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-05.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Software testing</h6>
+                        <p class="mxd-cpb-list__title">Software testing</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 05</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-05.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -887,16 +908,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-06.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Generative AI development</h6>
+                        <p class="mxd-cpb-list__title">Generative AI development</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 06</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-06.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -904,16 +925,16 @@
                     <div class="mxd-cpb-list__item hover-reveal__item">
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                       <div class="hover-reveal__content hover-reveal-280x340">
-                        <img class="hover-reveal__image" src="/static/img/demo/03_fea-img.webp" alt="Project Preview">
+                        <img class="hover-reveal__image" src="/static/img/illustrations/600x730_cpb-07.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__content anim-uni-in-up">
-                        <h6 class="mxd-cpb-list__title">Data engineering</h6>
+                        <p class="mxd-cpb-list__title">Data engineering</p>
                         <div class="mxd-cpb-list__num">
                           <span>/ 07</span>
                         </div>
                       </div>
                       <div class="mxd-cpb-list__image anim-uni-in-up">
-                        <img src="/static/img/demo/screens/02-d.webp" alt="Project Preview">
+                        <img src="/static/img/illustrations/1200x800_cpb-07.webp" alt="Project Preview">
                       </div>
                       <div class="mxd-cpb-list__divider anim-uni-in-up"></div>
                     </div>
@@ -1301,7 +1322,7 @@
                         <p id="stats-counter-1" class="mxd-stats-number mxd-stats-simple__counter">0</p>
                       </div>
                       <!-- image -->
-                      <img class="mxd-stats-simple__image" src="/static/img/icons/60x60_obj-btn-02.svg" alt="Icon">
+                      <img class="mxd-stats-simple__image" src="/static/img/icons/h70_stats-01.webp" alt="Icon">
                       <!-- description -->
                       <p class="mxd-stats-simple__descr t-140 t-bright">Happy clients who<br>trust my work</p>
                     </div>
@@ -1314,7 +1335,7 @@
                         <p id="stats-counter-2" class="mxd-stats-number mxd-stats-simple__counter">0</p>
                       </div>
                       <!-- image -->
-                      <img class="mxd-stats-simple__image" src="/static/img/icons/60x60_obj-btn-02.svg" alt="Icon">
+                      <img class="mxd-stats-simple__image" src="/static/img/icons/h70_stats-02.webp" alt="Icon">
                       <!-- description -->
                       <p class="mxd-stats-simple__descr t-140 t-bright">Clients come back for<br>a new projects</p>
                     </div>
@@ -1327,7 +1348,7 @@
                         <p id="stats-counter-3" class="mxd-stats-number mxd-stats-simple__counter">0</p>
                       </div>
                       <!-- image -->
-                      <img class="mxd-stats-simple__image" src="/static/img/icons/60x60_obj-btn-02.svg" alt="Icon">
+                      <img class="mxd-stats-simple__image" src="/static/img/icons/h70_stats-03.webp" alt="Icon">
                       <!-- description -->
                       <p class="mxd-stats-simple__descr t-140 t-bright">Years of professional<br>experience</p>
                     </div>
@@ -1340,7 +1361,7 @@
                         <p id="stats-counter-4" class="mxd-stats-number mxd-stats-simple__counter">0</p>
                       </div>
                       <!-- image -->
-                      <img class="mxd-stats-simple__image" src="/static/img/icons/60x60_obj-btn-02.svg" alt="Icon">
+                      <img class="mxd-stats-simple__image" src="/static/img/icons/h70_stats-04.webp" alt="Icon">
                       <!-- description -->
                       <p class="mxd-stats-simple__descr t-140 t-bright">Successfully<br>completed projects</p>
                     </div>
@@ -1488,7 +1509,7 @@
                 <div class="mxd-promo__content">
                   <p class="mxd-promo__title anim-uni-in-up">
                     <span class="mxd-promo__icon">
-                      <img src="/static/img/demo/icon-ignite.webp" alt="Icon">
+                      <img src="/static/img/icons/300x300_obj-cta-01.webp" alt="Icon">
                     </span>
                     <span class="mxd-promo__caption reveal-type">Let's talk about your project!</span>
                   </p>
@@ -1501,8 +1522,8 @@
                 </div>
                 <!-- parallax images -->
                 <div class="mxd-promo__images">
-                  <img class="promo-image promo-image-1" src="/static/img/demo/04_fea-img.webp" alt="Image">
-                  <img class="promo-image promo-image-2" src="/static/img/demo/icon-braxton.webp" alt="Image">
+                  <img class="promo-image promo-image-1" src="/static/img/illustrations/cta-img-01.webp" alt="Image">
+                  <img class="promo-image promo-image-2" src="/static/img/illustrations/cta-img-02.webp" alt="Image">
                 </div>
               </div>
             </div>
@@ -1682,7 +1703,7 @@
               <!-- subscribe form -->
               <form class="form notify-form form-light">
                 <input type="email" placeholder="Your Email" required>
-                <button class="btn btn-form btn-absolute-right btn-muted slide-right-up anim-no-delay" type="submit">
+                <button class="btn btn-form btn-absolute-right btn-muted slide-right-up anim-no-delay" type="submit" aria-label="Submit">
                   <i class="ph ph-arrow-up-right"></i>
                 </button>
               </form>
@@ -1735,7 +1756,7 @@
 
     <!-- Load Scripts Start -->
     <script src="/static/js/libs.min.js"></script>
-    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app.min.js"></script>
     <!-- counters -->
     <script>
       const statsCounter1 = new countUp.CountUp("stats-counter-1", 50, optionsPlus);
