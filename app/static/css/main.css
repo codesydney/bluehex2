@@ -8742,6 +8742,12 @@ form textarea:required:valid {
   display: none;
 }
 
+.hero-03-headline__text {
+  display: block;
+  font: normal var(--fw-medium) clamp(6rem, 14vw, 16rem)/1 var(--_font-accent);
+  color: var(--t-bright);
+}
+
 .hero-03-headline__svg-mobile {
   display: block;
 }
