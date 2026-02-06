@@ -1507,3 +1507,47 @@ gsap.to("[data-speed]", {
 // --------------------------------------------- //
 // Parallax Universal End
 // --------------------------------------------- //
+
+// Limit the burger menu to Home + Contact across pages.
+const trimBurgerMenu = () => {
+  document.querySelectorAll("#main-menu").forEach((menu) => {
+    menu.innerHTML = `
+      <li class="main-menu__item">
+        <a class="main-menu__link btn btn-anim" href="/">
+          <span class="btn-caption">Home</span>
+        </a>
+      </li>
+      <li class="main-menu__item">
+        <a class="main-menu__link btn btn-anim" href="/contact">
+          <span class="btn-caption">Contact</span>
+        </a>
+      </li>
+    `;
+  });
+};
+
+window.addEventListener("DOMContentLoaded", trimBurgerMenu);
+window.addEventListener("load", trimBurgerMenu);
+setTimeout(trimBurgerMenu, 0);
+setTimeout(trimBurgerMenu, 500);
+
+const applyBranding = () => {
+  const brandText = "Bluehex by Code.Sydney";
+  document.title = brandText;
+  document.querySelectorAll(".mxd-logo__text").forEach((node) => {
+    node.textContent = brandText;
+  });
+  document.querySelectorAll(".mxd-logo__image").forEach((node) => node.remove());
+  document
+    .querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"], link[rel="manifest"]')
+    .forEach((node) => node.remove());
+  const favicon = document.createElement("link");
+  favicon.rel = "icon";
+  favicon.href = "/static/img/favicon/favico.ico";
+  document.head.appendChild(favicon);
+};
+
+window.addEventListener("DOMContentLoaded", applyBranding);
+window.addEventListener("load", applyBranding);
+setTimeout(applyBranding, 0);
+setTimeout(applyBranding, 500);
