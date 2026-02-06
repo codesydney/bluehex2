@@ -1543,7 +1543,7 @@ const applyBranding = () => {
     .forEach((node) => node.remove());
   const favicon = document.createElement("link");
   favicon.rel = "icon";
-  favicon.href = "/static/img/favicon/favico.ico";
+  favicon.href = "/static/img/favicon/bluehex.svg";
   document.head.appendChild(favicon);
 };
 
