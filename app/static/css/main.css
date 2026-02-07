@@ -590,8 +590,8 @@ a {
 }
 
 html {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   font-family: sans-serif;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
@@ -1385,8 +1385,8 @@ html.lenis, html.lenis body {
 .mxd-block__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-block__image {
@@ -4752,8 +4752,8 @@ form textarea:required:valid {
 .mxd-avatars__item img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-avatars__item.small {
@@ -4933,8 +4933,8 @@ form textarea:required:valid {
 .mxd-divider__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-divider__image {
@@ -4973,14 +4973,14 @@ form textarea:required:valid {
   background-position: center center;
   -moz-background-size: contain;
        background-size: contain;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .mxd-divider__video img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-divider__video {
@@ -6197,8 +6197,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -moz-border-radius: var(--_radius-m);
        border-radius: var(--_radius-m);
 }
@@ -8047,8 +8047,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mxd-pulse {
@@ -8533,8 +8533,8 @@ form textarea:required:valid {
 .mxd-hero-02-image__inner img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-hero-02-image__inner.type-03 {
@@ -8643,8 +8643,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .hero-03-marquee__video {
@@ -9463,8 +9463,8 @@ form textarea:required:valid {
           transform: translateX(-50%) translateY(-50%);
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-hero-05__videoblock {
@@ -9483,8 +9483,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mxd-hero-05-videoblock__descr {
@@ -9806,8 +9806,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -moz-border-radius: var(--_radius-m);
        border-radius: var(--_radius-m);
 }
@@ -10281,8 +10281,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .hero-07-circle__image {
@@ -10734,8 +10734,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mxd-hero-08__data-wrap {
@@ -11298,8 +11298,8 @@ form textarea:required:valid {
 .post-featured__thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .post-featured__categories {
@@ -11474,8 +11474,8 @@ form textarea:required:valid {
 .post-simple__thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .no-touch .post-simple__thumb:hover .mxd-preview-hover {
   opacity: 1;
@@ -11666,8 +11666,8 @@ form textarea:required:valid {
 .post-secondary__thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .post-secondary__thumb {
@@ -11974,8 +11974,8 @@ form textarea:required:valid {
 .mxd-projects-archive__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 1200px) {
   .mxd-projects-archive__image {
@@ -12208,8 +12208,8 @@ form textarea:required:valid {
 .recent-post__thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-filter: blur(0);
           filter: blur(0);
   -webkit-transform: scale(1);
@@ -12432,8 +12432,8 @@ form textarea:required:valid {
 .widget__bgimage img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .widget__tags {
@@ -12693,8 +12693,8 @@ form textarea:required:valid {
 .mxd-article__thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-article__thumb {
@@ -13083,8 +13083,8 @@ form textarea:required:valid {
 .mxd-article-author__avatar img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-article-author__avatar {
@@ -13353,8 +13353,8 @@ form textarea:required:valid {
 .mxd-comment__avatar img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-comment__avatar {
@@ -15385,8 +15385,8 @@ form textarea:required:valid {
   position: relative;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transform: scale(1, 1.4);
      -moz-transform: scale(1, 1.4);
       -ms-transform: scale(1, 1.4);
@@ -15519,8 +15519,8 @@ form textarea:required:valid {
 .mxd-pinned__img {
   width: auto;
   height: 30rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -moz-border-radius: 2em;
        border-radius: 2em;
 }
@@ -15651,8 +15651,8 @@ form textarea:required:valid {
   display: block;
   width: auto;
   height: 24rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -moz-border-radius: 2em;
        border-radius: 2em;
 }
@@ -17971,8 +17971,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .marquee__item.overflow-visible {
   overflow: visible;
@@ -18111,8 +18111,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .marquee__text {
@@ -18166,8 +18166,8 @@ form textarea:required:valid {
 .marquee__image video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .marquee__text {
@@ -18665,8 +18665,8 @@ form textarea:required:valid {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transition: all var(--_animspeed-medium) var(--_animbezier);
   -moz-transition: all var(--_animspeed-medium) var(--_animbezier);
   transition: all var(--_animspeed-medium) var(--_animbezier);
@@ -18899,8 +18899,8 @@ form textarea:required:valid {
 .mxd-projects-stack__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .mxd-projects-stack__image img.mobile {
   display: block;
@@ -19048,8 +19048,8 @@ form textarea:required:valid {
 .mxd-testimonials-card__photo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-testimonials-card__photo {
@@ -19134,8 +19134,8 @@ form textarea:required:valid {
 .mxd-testimonials-photo__avatar img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-testimonials-photo__avatar {
@@ -19207,8 +19207,8 @@ form textarea:required:valid {
 .mxd-testimonials-photo__image-inner img {
   min-width: 100%;
   min-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mxd-testimonials-photo__text {
@@ -19485,8 +19485,8 @@ form textarea:required:valid {
 .mxd-testimonials-image__avatar img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-testimonials-image__avatar {
@@ -19940,8 +19940,8 @@ form textarea:required:valid {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-blog-preview__image {
@@ -20615,8 +20615,8 @@ form textarea:required:valid {
 .mxd-team-cards__photo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (min-width: 768px) {
   .mxd-team-cards__photo {
@@ -20937,8 +20937,8 @@ form textarea:required:valid {
 .mxd-project-cards__inner img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mxd-project__nav {
