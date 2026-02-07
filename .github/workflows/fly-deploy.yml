@@ -4,52 +4,21 @@ on:
   push:
     branches:
       - main
-      - develop
-  workflow_dispatch:
-    inputs:
-      ref:
-        description: "Git ref (branch, tag, or SHA) to deploy to production"
-        required: false
-        default: "main"
 
 concurrency:
   group: fly-deploy
   cancel-in-progress: true
 
 jobs:
-  deploy_staging:
-    name: Deploy Staging
-    runs-on: ubuntu-latest
-    environment: staging
-    if: ${{ github.ref == 'refs/heads/develop' || github.event_name == 'workflow_dispatch' }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
-
-      - name: Set up Flyctl
-        uses: superfly/flyctl-actions/setup-flyctl@master
-
-      - name: Deploy
-        run: flyctl deploy --remote-only --config fly.staging.toml --app "${{ secrets.FLY_APP_STAGING }}"
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_STAGING }}
-
-      - name: Smoke Test
-        run: curl -fsS "https://${{ secrets.FLY_APP_STAGING }}.fly.dev/health"
-
   deploy_production:
     name: Deploy Production
     runs-on: ubuntu-latest
-    needs: deploy_staging
-    if: ${{ github.event_name == 'workflow_dispatch' }}
     environment: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.ref }}
 
       - name: Set up Flyctl
         uses: superfly/flyctl-actions/setup-flyctl@master
