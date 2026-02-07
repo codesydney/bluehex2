@@ -17630,7 +17630,7 @@ form textarea:required:valid {
 }
 
 .mxd-cpb-list__image {
-  display: block;
+  display: none;
   -moz-border-radius: var(--_radius-m);
        border-radius: var(--_radius-m);
   overflow: hidden;
@@ -17638,7 +17638,7 @@ form textarea:required:valid {
 }
 @media only screen and (min-width: 1200px) {
   .mxd-cpb-list__image {
-    display: none;
+    display: block;
   }
 }
 
