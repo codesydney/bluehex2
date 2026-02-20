@@ -670,11 +670,19 @@ new Ukiyo(imagesSmall,{
   speed: 1.5,
   externalRAF: false
 });
-new Ukiyo(video,{
-  scale: isMobileParallax ? 1.1 : 1.5,
-  speed: isMobileParallax ? 1.0 : 1.5,
-  externalRAF: false
-});
+if (isMobileParallax) {
+  video.forEach((el) => {
+    el.pause();
+    el.removeAttribute("autoplay");
+    el.style.display = "none";
+  });
+} else {
+  new Ukiyo(video,{
+    scale: 1.5,
+    speed: 1.5,
+    externalRAF: false
+  });
+}
 // --------------------------------------------- //
 // Parallax - Ukiyo Images & Video End
 // --------------------------------------------- //

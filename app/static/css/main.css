@@ -21033,3 +21033,9 @@ form textarea:required:valid {
 /* ------------------------------------------------*/
 /* Features - Project Details End */
 /* ------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+  .parallax-video {
+    display: none !important;
+  }
+}
