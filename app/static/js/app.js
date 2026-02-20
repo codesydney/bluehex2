@@ -659,6 +659,7 @@ $(function() {
 const images = document.querySelectorAll(".parallax-img");
 const imagesSmall = document.querySelectorAll(".parallax-img-small");
 const video = document.querySelectorAll(".parallax-video");
+const isMobileParallax = window.matchMedia("(max-width: 768px)").matches;
 new Ukiyo(images,{
   scale: 1.5,
   speed: 1.5,
@@ -670,8 +671,8 @@ new Ukiyo(imagesSmall,{
   externalRAF: false
 });
 new Ukiyo(video,{
-  scale: 1.5,
-  speed: 1.5,
+  scale: isMobileParallax ? 1.1 : 1.5,
+  speed: isMobileParallax ? 1.0 : 1.5,
   externalRAF: false
 });
 // --------------------------------------------- //
