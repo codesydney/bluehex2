@@ -20,7 +20,7 @@ async def login_page(request: Request, db: AsyncSession = Depends(get_db)):
     # If already logged in, redirect to home
     if user:
         return RedirectResponse(url="/", status_code=302)
-    return templates.TemplateResponse("login.html", {
+    return templates.TemplateResponse(request, "login.html", {
         "request": request,
         "user": None,
         "is_logged_in": False
@@ -41,7 +41,7 @@ async def login(
         user = await auth_controller.authenticate_user(email, password)
         
         if not user:
-            return templates.TemplateResponse("login.html", {
+            return templates.TemplateResponse(request, "login.html", {
                 "request": request,
                 "error": "Invalid email or password"
             })
@@ -66,7 +66,7 @@ async def login(
         
     except Exception as e:
         logger.error(f"Login error: {str(e)}", exc_info=True)
-        return templates.TemplateResponse("login.html", {
+        return templates.TemplateResponse(request, "login.html", {
             "request": request,
             "error": "An error occurred. Please try again."
         })
@@ -78,7 +78,7 @@ async def signup_page(request: Request, db: AsyncSession = Depends(get_db)):
     # If already logged in, redirect to home
     if user:
         return RedirectResponse(url="/", status_code=302)
-    return templates.TemplateResponse("signup.html", {
+    return templates.TemplateResponse(request, "signup.html", {
         "request": request,
         "user": None,
         "is_logged_in": False
@@ -100,7 +100,7 @@ async def signup(
     try:
         # Validate password confirmation
         if password != confirm_password:
-            return templates.TemplateResponse("signup.html", {
+            return templates.TemplateResponse(request, "signup.html", {
                 "request": request,
                 "error": "Passwords do not match. Please try again."
             })
@@ -111,7 +111,7 @@ async def signup(
         try:
             phone_country_enum = PhoneCountry(phone_country)
         except ValueError:
-            return templates.TemplateResponse("signup.html", {
+            return templates.TemplateResponse(request, "signup.html", {
                 "request": request,
                 "error": "Invalid country selected. Please try again."
             })
@@ -145,13 +145,13 @@ async def signup(
         return response
             
     except ValueError as e:
-        return templates.TemplateResponse("signup.html", {
+        return templates.TemplateResponse(request, "signup.html", {
             "request": request,
             "error": str(e)
         })
     except Exception as e:
         logger.error(f"Signup error: {str(e)}", exc_info=True)
-        return templates.TemplateResponse("signup.html", {
+        return templates.TemplateResponse(request, "signup.html", {
             "request": request,
             "error": "An error occurred. Please try again."
         })
@@ -172,7 +172,7 @@ async def logout(request: Request, db: AsyncSession = Depends(get_db)):
 @router.get("/forgot-password", response_class=HTMLResponse)
 async def forgot_password_page(request: Request):
     """Show forgot password page."""
-    return templates.TemplateResponse("forgot-password.html", {"request": request})
+    return templates.TemplateResponse(request, "forgot-password.html", {"request": request})
 
 @router.post("/forgot-password")
 async def forgot_password(
@@ -186,14 +186,14 @@ async def forgot_password(
         success = await auth_controller.create_password_reset_token(email)
         
         # Always show success message for security (don't reveal if email exists)
-        return templates.TemplateResponse("forgot-password.html", {
+        return templates.TemplateResponse(request, "forgot-password.html", {
             "request": request,
             "success": "If an account with that email exists, we've sent you a password reset link."
         })
         
     except Exception as e:
         logger.error(f"Error in forgot password: {str(e)}", exc_info=True)
-        return templates.TemplateResponse("forgot-password.html", {
+        return templates.TemplateResponse(request, "forgot-password.html", {
             "request": request,
             "error": "An error occurred. Please try again."
         })
@@ -208,7 +208,7 @@ async def reset_password_page(request: Request, token: str = None):
     if not token:
         return RedirectResponse(url="/forgot-password", status_code=302)
     
-    return templates.TemplateResponse("reset-password.html", {
+    return templates.TemplateResponse(request, "reset-password.html", {
         "request": request,
         "token": token
     })
@@ -224,14 +224,14 @@ async def reset_password(
     """Handle password reset."""
     try:
         if new_password != confirm_password:
-            return templates.TemplateResponse("reset-password.html", {
+            return templates.TemplateResponse(request, "reset-password.html", {
                 "request": request,
                 "token": token,
                 "error": "Passwords do not match."
             })
         
         if len(new_password) < 8:
-            return templates.TemplateResponse("reset-password.html", {
+            return templates.TemplateResponse(request, "reset-password.html", {
                 "request": request,
                 "token": token,
                 "error": "Password must be at least 8 characters long."
@@ -241,12 +241,12 @@ async def reset_password(
         success = await auth_controller.reset_password(token, new_password)
         
         if success:
-            return templates.TemplateResponse("reset-password.html", {
+            return templates.TemplateResponse(request, "reset-password.html", {
                 "request": request,
                 "success": "Password reset successfully! You can now log in with your new password."
             })
         else:
-            return templates.TemplateResponse("reset-password.html", {
+            return templates.TemplateResponse(request, "reset-password.html", {
                 "request": request,
                 "token": token,
                 "error": "Invalid or expired reset token. Please request a new password reset."
@@ -254,7 +254,7 @@ async def reset_password(
         
     except Exception as e:
         logger.error(f"Password reset error: {str(e)}", exc_info=True)
-        return templates.TemplateResponse("reset-password.html", {
+        return templates.TemplateResponse(request, "reset-password.html", {
             "request": request,
             "token": token,
             "error": "An error occurred. Please try again."

@@ -82,7 +82,7 @@ async def root(request: Request, db: AsyncSession = Depends(get_db)):
     """Root endpoint."""
     user = await get_current_user_from_request(request, db)
     
-    return templates.TemplateResponse("index.html", {
+    return templates.TemplateResponse(request, "index.html", {
         "request": request,
         "user": user,
         "is_logged_in": user is not None,
@@ -93,7 +93,7 @@ async def root(request: Request, db: AsyncSession = Depends(get_db)):
 async def customers_love_us_page(request: Request, db: AsyncSession = Depends(get_db)):
     """Show customers love us page."""
     user = await get_current_user_from_request(request, db)
-    return templates.TemplateResponse("customers-love-us.html", {
+    return templates.TemplateResponse(request, "customers-love-us.html", {
         "request": request,
         "user": user,
         "is_logged_in": user is not None,
@@ -104,7 +104,7 @@ async def customers_love_us_page(request: Request, db: AsyncSession = Depends(ge
 async def bluehex_blocks_page(request: Request, db: AsyncSession = Depends(get_db)):
     """Show bluehex blocks page."""
     user = await get_current_user_from_request(request, db)
-    return templates.TemplateResponse("bluehex-blocks.html", {
+    return templates.TemplateResponse(request, "bluehex-blocks.html", {
         "request": request,
         "user": user,
         "is_logged_in": user is not None,
@@ -115,7 +115,7 @@ async def bluehex_blocks_page(request: Request, db: AsyncSession = Depends(get_d
 async def contact_page(request: Request, db: AsyncSession = Depends(get_db)):
     """Show contact page."""
     user = await get_current_user_from_request(request, db)
-    return templates.TemplateResponse("contact.html", {
+    return templates.TemplateResponse(request, "contact.html", {
         "request": request,
         "user": user,
         "is_logged_in": user is not None,
@@ -130,12 +130,12 @@ async def health_check():
 @app.get("/{page}", response_class=HTMLResponse)
 async def rayo_page(
     request: Request,
-    page: str = Path(..., regex=RAYO_PAGE_REGEX),
+    page: str = Path(..., pattern=RAYO_PAGE_REGEX),
     db: AsyncSession = Depends(get_db),
 ):
     """Serve other Rayo pages."""
     user = await get_current_user_from_request(request, db)
-    return templates.TemplateResponse(f"{page}.html", {
+    return templates.TemplateResponse(request, f"{page}.html", {
         "request": request,
         "user": user,
         "is_logged_in": user is not None,
