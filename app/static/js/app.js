@@ -661,6 +661,11 @@ const imagesSmall = document.querySelectorAll(".parallax-img-small");
 const parallaxVideos = document.querySelectorAll(".parallax-video:not(.parallax-video--hero)");
 const parallaxVideosHero = document.querySelectorAll(".parallax-video--hero");
 const isMobileParallax = window.matchMedia("(max-width: 768px)").matches;
+// iOS / iPadOS: Ukiyo on <video> often leaves a frozen frame/poster; use native inline playback instead.
+const isIOS =
+  typeof navigator !== "undefined" &&
+  (/iP(ad|hone|od)/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
 new Ukiyo(images,{
   scale: 1.5,
   speed: 1.5,
@@ -671,18 +676,28 @@ new Ukiyo(imagesSmall,{
   speed: 1.5,
   externalRAF: false
 });
-if (parallaxVideos.length) {
+if (!isIOS && parallaxVideos.length) {
   new Ukiyo(parallaxVideos, {
     scale: isMobileParallax ? 1.1 : 1.5,
     speed: isMobileParallax ? 1.0 : 1.5,
     externalRAF: false
   });
 }
-if (parallaxVideosHero.length) {
+if (!isIOS && parallaxVideosHero.length) {
   new Ukiyo(parallaxVideosHero, {
     scale: isMobileParallax ? 1.04 : 1.12,
     speed: 1.0,
     externalRAF: false
+  });
+}
+if (isIOS) {
+  document.querySelectorAll("video").forEach((v) => {
+    v.muted = true;
+    v.playsInline = true;
+    const p = v.play();
+    if (p !== undefined && typeof p.catch === "function") {
+      p.catch(function () { /* ignore autoplay policy noise */ });
+    }
   });
 }
 // --------------------------------------------- //
