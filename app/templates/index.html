@@ -45,6 +45,20 @@
         height: auto;
         object-fit: contain;
       }
+      /* Keep hero marquee/headline above the parallax divider video (Ukiyo scale can spill upward) */
+      .mxd-hero-03__top {
+        position: relative;
+        z-index: 2;
+      }
+      .mxd-hero-03__bottom {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .mxd-hero-03__marquee,
+      .mxd-hero-03__headline {
+        z-index: 1;
+      }
     </style>
     <!-- Template Styles End -->
 
@@ -246,7 +260,7 @@
                     <!-- item -->
                     <div class="marquee__item one-line">
                       <div class="hero-03-marquee__image">
-                        <img class="mxd-rotate-slow" src="/static/img/hero/28_hero-img.svg" alt="Image">
+                        <img class="mxd-rotate-slow" src="/static/img/hero/28_hero-img-egg.webp" alt="Image">
                       </div>
                     </div>
                     <!-- item -->
@@ -279,7 +293,7 @@
                 <!-- video divider -->
                 <div class="mxd-divider">
                   <div class="mxd-divider__video">
-                    <video class="video parallax-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/1920x1080_video-04.webp">
+                    <video class="video parallax-video parallax-video--hero" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="/static/video/1920x1080_video-04.webp">
                       <source type="video/mp4" src="/static/video/Bluehex%20Video.mp4">
                     </video>
                   </div>
@@ -483,6 +497,23 @@
                   </div>
                   <!-- item -->
                   <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in-right">
+                    <div class="mxd-services-cards-s__inner radius-l padding-4" style="background: #ffffff;">
+                      <div class="mxd-services-cards-s__logo" style="max-width: 200px; overflow: visible; text-align: center; margin: 0 auto;">
+                        <img src="/static/img/logos/Logo_APCCI.svg" alt="Aus Phil Chamber of Commerce Inc logo" style="max-width: 100%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+                      </div>
+                      <div class="mxd-services-cards-s__title" style="margin-bottom: 0.6rem;">
+                        <p class="anim-uni-in-up" style="font-size: 2rem; line-height: 1.2; text-align: center; margin: 0; color: #161616;">Aus Phil Chamber of Commerce Inc</p>
+                      </div>
+                      <div class="mxd-services-cards-s__link" style="margin-top: 0;">
+                        <a class="anim-uni-in-up" href="https://www.apcci.au/" target="_blank" rel="noopener noreferrer" style="font-size: 1.4rem; line-height: 1.2; text-align: center; display: block; color: #161616;">apcci.au</a>
+                      </div>
+                      <div class="mxd-services-cards-s__info" style="margin-top: 1rem;">
+                        <p class="anim-uni-in-up" style="font-size: 1.4rem; line-height: 1.4; color: #161616;">Building bridges for trade, innovation, and inclusive growth between Australian and Filipino businesses, with tailored support for members and partners.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- item -->
+                  <div class="col-12 col-xl-4 mxd-services-cards-s__item mxd-grid-item anim-uni-scale-in">
                     <div class="mxd-services-cards-s__inner radius-l padding-4" style="background: #ffffff;">
                       <div class="mxd-services-cards-s__logo" style="max-width: 200px; overflow: visible; text-align: center; margin: 0 auto;">
                         <img src="/static/img/logos/Logo_PAMAI.svg" alt="PAMAI logo" style="max-width: 100%; height: auto; object-fit: contain; display: block; margin: 0 auto;">

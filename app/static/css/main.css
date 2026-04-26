@@ -8589,6 +8589,7 @@ form textarea:required:valid {
 
 .mxd-hero-03__top {
   position: relative;
+  z-index: 2;
   height: -moz-calc(100vh - 7.6rem);
   height: calc(100vh - 7.6rem);
   padding-top: 12rem;
@@ -8603,10 +8604,13 @@ form textarea:required:valid {
 
 .mxd-hero-03__bottom {
   position: relative;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .mxd-hero-03__marquee {
   position: absolute;
+  z-index: 1;
   left: 0;
   top: 50%;
   bottom: auto;
@@ -8688,6 +8692,7 @@ form textarea:required:valid {
 
 .mxd-hero-03__headline {
   position: absolute;
+  z-index: 1;
   bottom: 6rem;
   left: 50%;
   right: auto;

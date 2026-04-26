@@ -658,7 +658,8 @@ $(function() {
 // --------------------------------------------- //
 const images = document.querySelectorAll(".parallax-img");
 const imagesSmall = document.querySelectorAll(".parallax-img-small");
-const video = document.querySelectorAll(".parallax-video");
+const parallaxVideos = document.querySelectorAll(".parallax-video:not(.parallax-video--hero)");
+const parallaxVideosHero = document.querySelectorAll(".parallax-video--hero");
 const isMobileParallax = window.matchMedia("(max-width: 768px)").matches;
 new Ukiyo(images,{
   scale: 1.5,
@@ -670,11 +671,20 @@ new Ukiyo(imagesSmall,{
   speed: 1.5,
   externalRAF: false
 });
-new Ukiyo(video,{
-  scale: isMobileParallax ? 1.1 : 1.5,
-  speed: isMobileParallax ? 1.0 : 1.5,
-  externalRAF: false
-});
+if (parallaxVideos.length) {
+  new Ukiyo(parallaxVideos, {
+    scale: isMobileParallax ? 1.1 : 1.5,
+    speed: isMobileParallax ? 1.0 : 1.5,
+    externalRAF: false
+  });
+}
+if (parallaxVideosHero.length) {
+  new Ukiyo(parallaxVideosHero, {
+    scale: isMobileParallax ? 1.04 : 1.12,
+    speed: 1.0,
+    externalRAF: false
+  });
+}
 // --------------------------------------------- //
 // Parallax - Ukiyo Images & Video End
 // --------------------------------------------- //
